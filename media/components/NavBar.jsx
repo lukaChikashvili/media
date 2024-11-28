@@ -1,7 +1,7 @@
 
 import Link from "next/link"
 import MobileMenu from "./MobileMenu"
-import { CirclePlus, House, Users } from 'lucide-react'
+import { CirclePlus, House, User, Users } from 'lucide-react'
 import { ClerkLoaded, ClerkLoading, SignedIn, SignedOut } from "@clerk/nextjs"
 
 
@@ -43,11 +43,17 @@ const NavBar = () => {
 
         <ClerkLoaded>
             <SignedIn>
-                Signed in
+               <div>
+                 
+               
+               </div>
             </SignedIn>
 
             <SignedOut>
-                Signed out
+                <div className="flex items-center gap-2 text-sm">
+                  <User />
+                  <Link href="/sign-in">Login/Register</Link>
+                </div>
             </SignedOut>
 
             
